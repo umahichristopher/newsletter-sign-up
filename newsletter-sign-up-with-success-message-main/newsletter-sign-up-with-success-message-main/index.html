@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .formdv {
+      
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="parent"> <!----parent-->
+      <div class="pchild"> <!----firts child-->
+        <h1>Stay updated!</h1>
+
+        <p>Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <div class="formdv"> <!----formdiv open-->
+          <form>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1">Product discovery and building what matters</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2">Marketing and sales strategies</label><br>
+            <p id="emailp" >Email address</p>
+            <input type="email" id="emailinput" name="email" placeholder="email@company.com" required><br>
+            <button id="showButton">Show Message</button>
+          </form>
+      </div> <!-----form div clas end-->
+
+
+
+      </div>
+      <div class="pchildtwo">  <!---second child-->
+        <img id="bgimage" src="assets/images/illustration-sign-up-desktop.svg" alt="image">
+
+
+      </div>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <img id="image" src="assets/images/icon-list.svg" alt=""> <br>
+          <h1>thanks for subscribing </h1> <br>
+          <p>a comfirmation email has been sent to you open your your email and click the link there to login to your account</p>
+          <button id="dismissButton" class="dismiss-button">Dismiss</button>
+        </div>
+      </div>
+
+  </main>
+
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">christopher</a>.
+  </div>
+
+<!-- ... Your HTML code ... -->
+
+<script>
+  var showButton = document.getElementById('showButton');
+  var modal = document.getElementById('modal');
+  var dismissButton = document.getElementById('dismissButton');
+
+  showButton.addEventListener('click', function() {
+    modal.style.display = "block";
+  });
+
+  dismissButton.addEventListener('click', function() {
+    modal.style.display = "none";
+  });
+
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = "block";
+    }
+  });
+</script>
+
+</body>
+</html>
